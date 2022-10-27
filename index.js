@@ -72,14 +72,14 @@ app.post('/nuevo', (req, res)=>{
 
 app.get('/escritos', (req, res)=>{
     //res.send({mensaje:'hola'})
-    connection.query('SELECT * FROM propios', (error, results, fields)=>{
+    connection.query('SELECT * FROM propios;', (error, results, fields)=>{
         if (error) throw error;
         res.send({data: results.length > 0 ? results : []});
     });
 })
 
 app.get('/escritos/:id', (req, res)=>{
-    connection.query('SELECT * FROM propios WHERE id_escrito = ?', [req.params.id], (error, results, fields)=>{ 
+    connection.query('SELECT * FROM propios WHERE id_escrito = ?;', [req.params.id], (error, results, fields)=>{ 
         if (error) throw error;
         res.send({data: results.length > 0 ? results : []});
     });
