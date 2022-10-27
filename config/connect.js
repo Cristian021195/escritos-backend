@@ -3,7 +3,10 @@ const connection_string = {
     user     : process.env.MYSQLUSER || 'root',
     password : process.env.MYSQLPASSWORD || '',
     database : process.env.MYSQLDATABASE || 'escritos',
-    port: process.env.MYSQLPORT || 3306
+    port: process.env.MYSQLPORT || 3306,
+    ssl: {
+        rejectUnauthorized: false
+    }
 
     /*host     : 'localhost',
     user     : 'root',
