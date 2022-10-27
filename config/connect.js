@@ -4,6 +4,12 @@ const connection_string = {
     password : process.env.MYSQLPASSWORD || '',
     database : process.env.MYSQLDATABASE || 'escritos',
     port: process.env.MYSQLPORT || 3306
+
+    /*host     : 'localhost',
+    user     : 'root',
+    password : '',
+    database : 'escritos',
+    port: 3306*/
     
 }
 

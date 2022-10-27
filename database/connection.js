@@ -1,4 +1,11 @@
 const mysql = require('mysql');
+const { connection_string } = require('../config/connect');
+const connection  = mysql.createPool({
+  connectionLimit : 10,
+  ...connection_string
+});
+
+/*const mysql = require('mysql');
 const {connection_string} = require('../config/connect')
 
 const connection = mysql.createConnection(connection_string);
@@ -9,8 +16,8 @@ connection.connect((err)=>{
       return;
     }   
     console.log('connected as id ' + connection.threadId);
-});
+});*/
  
 module.exports = {
-    connection
+  connection
 }
